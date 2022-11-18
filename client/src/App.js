@@ -21,7 +21,7 @@ function App() {
     });
   }, []);
 
-  if (!user) return <LogInPage onLogin={setUser} />
+  // if (!user) return <LogInPage onLogin={setUser} />
 
   return (
     // <div className="App">
