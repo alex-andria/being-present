@@ -1,7 +1,7 @@
 import React from "react";
-import "./addjournal.css"
+import "./addjournalmodal.css"
 
-function AddJournal(props) {
+function OpenJournal(props) {
   if (!props.show) {
     return null
   }
@@ -10,15 +10,15 @@ function AddJournal(props) {
     <div className="modal" onClick={props.onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
         <div className="modal-header">
-          <h4 className="modal-title">How where you present today?</h4>
+          <h4 className="modal-title">{props.title}</h4>
         </div>
         <form onSubmit={props.onSubmit}>
           <div className="modal-body">
-            <textarea rows={25} cols={55}></textarea>
+            {props.children}
           </div>
           <div className="modal-footer">
-            {/* <button className="modal-submit" onClick={props.onClose}>Close</button> */}
-            <button type="submit" onClick={props.onSubmit}>Add</button>
+            <button className="modal-submit" onClick={props.onClose}>Close</button>
+            {/* <button type="submit" onClick={props.onSubmit}>Add</button> */}
           </div>
         </form>
       </div>
@@ -26,4 +26,4 @@ function AddJournal(props) {
   );
 }
 
-export default AddJournal;
+export default OpenJournal;
