@@ -9,13 +9,20 @@ class JournalsController < ApplicationController
     end
 
     def create
-        journal = Journal.create(journal_params)
+        journal = Journal.create!(journal_params)
         render json: journal, status: :created
     end
     
     def update
         journal = Journal.find_by[:journal_id]
-        journal.update(journal_params)
+        journal.update!(journal_params)
+        render json: journal, status: :accepted
+    end
+
+    def destroy
+        journal = Journal.find_by(id: params[:id])
+        journal.destroy!
+        head :no_content
     end
 
     private 
