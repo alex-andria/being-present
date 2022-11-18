@@ -1,29 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Button } from "./styles";
-import Logo from './Logo.png';
+import { Button } from "../styles";
+import LogOutButton from "./LogOutButton";
+import Logo1 from '../Logo1.png';
 
-// {user, setUser}
-function Navbar() {
+function NavBar({user, setUser}) {
   return(
     <Wrapper>
         <Logo>
-            <Link to="/"><img className="logo" src={Logo}/> </Link>
+            <Link to="/"><img className="logo" src={Logo1}/> </Link>
         </Logo>
         <Nav>
             <Button as={Link} to="/new">
-            Add Habit
+            Home
             </Button>
-            <Button variant="outline" onClick={handleLogoutClick}>
-            Logout
-            </Button>
+            <LogOutButton setUser={setUser}/>
         </Nav>
       
     </Wrapper>
   )
 }
-
+export default NavBar;
 
 const Wrapper = styled.header`
   display: flex;

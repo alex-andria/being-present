@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SignUpForm from "./SignUpForm";
-import Logo from "./Logo.png";
+import Logo1 from "../Logo1.png";
 import {Error} from "../styles"
 
 //check where onLogin is coming from
@@ -62,7 +62,7 @@ function LogInPage({onLogin}){
         <div className="">
             <form onSubmit={handleSubmit}>
                 <div className="imgcontainer">
-                    <img src={Logo} alt="Logo" className="avatar"/>
+                    <img src={Logo1} alt="Logo" className="avatar"/>
                 </div>
 
                 <div className="container">

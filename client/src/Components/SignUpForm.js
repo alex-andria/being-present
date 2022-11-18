@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "./Logo.png";
+import Logo1 from "../Logo1.png";
 
 //check where onLogin is being passed
 // {onLogin}
