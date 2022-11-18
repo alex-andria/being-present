@@ -14,7 +14,7 @@ function AddJournal(props) {
         </div>
         <form onSubmit={props.onSubmit}>
           <div className="modal-body">
-            <textarea></textarea>
+            <textarea rows={25} cols={55}></textarea>
           </div>
           <div className="modal-footer">
             {/* <button className="modal-submit" onClick={props.onClose}>Close</button> */}

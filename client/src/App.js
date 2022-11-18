@@ -35,9 +35,6 @@ function App() {
 
       <h2>Be present. Add your entry.</h2>
       {/* Create New Journal */}
-      <br></br>
-
-      <h2>MODAL - journal entry form:</h2>
       <button onClick={() => setShow(true)} className="open-modal">Add Journal</button>
       <AddJournal onClose={() => setShow(false)} onSubmit={submitJournal} show={show}/>
       {/* Form */}
