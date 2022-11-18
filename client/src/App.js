@@ -1,21 +1,36 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import LogInPage from "./Components/LogInPage";
 import AddJournal from "./Components/JournalModals/AddJournal";
 import OpenJournal from "./Components/JournalModals/OpenJournal";
 import "./App.css"
+import Logo from './Logo.png';
 // import Journal from "./Components/Journal";
 
 function App() {
   // const [count, setCount] = useState(0);
+  const [user, setUser] = useState(null);
+  const [isLoggedIn, serIsLoggedIn] = useState(false)
+  const [journals, setJournals] = useState([]);
+  const [addEntry, setAddEntry] = useState(false);
+  const [openEntry, setOpenEntry] = useState(false);
+
+  useEffect(() => {
+    //auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  if (!user) return <LogInPage onLogin={setUser} />
 
   // useEffect(() => {
   //   fetch("/hello")
   //     .then((r) => r.json())
   //     .then((data) => setCount(data.count));
   // }, []);
-  const[journals, setJournals] = useState([]);
-  const [addEntry, setAddEntry] = useState(false);
-  const [openEntry, setOpenEntry] = useState(false);
 
   function submitJournal(e) {
     // this would need the info for pushing the journal to the db

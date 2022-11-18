@@ -1,5 +1,5 @@
 import React from "react";
-import "./addjournalmodal.css"
+import "./journalmodal.css"
 
 function OpenJournal(props) {
   if (!props.show) {
