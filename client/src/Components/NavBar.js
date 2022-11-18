@@ -11,6 +11,7 @@ function NavBar({user, setUser}) {
         <Logo>
             <Link to="/"><img className="logo" src={Logo1}/> </Link>
         </Logo>
+        
         <Nav>
             <Button as={Link} to="/new">
             Home
