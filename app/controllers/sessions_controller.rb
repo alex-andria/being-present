@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
     # original
-    # skip_before_action :authenticate_user, only: [:create]
-    skip_before_action :authenticate_user
+    skip_before_action :authenticate_user, only: [:create]
 
     # test
     # skip_before_action :authorize, only: [:create]
@@ -9,8 +8,11 @@ class SessionsController < ApplicationController
     # POST '/login'
     def create 
         user = User.find_by(email: params[:email])
+        #binding.break
         if user&.authenticate(params[:password])
+            #binding.break
             session[:user_id] = user.id
+            binding.break
             render json: user, status: :ok
         else
             render json: {errors: ['Invalid credentials']}, status: :unauthorized
@@ -19,8 +21,11 @@ class SessionsController < ApplicationController
 
     # DELETE '/logout'
     def destroy 
+
+        #binding.break
+
         if current_user
-            current_user = nil
+            #current_user = nil
             session.delete :user_id
             head :no_content
         else

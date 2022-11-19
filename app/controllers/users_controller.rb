@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
     # original
-    # skip_before_action :authenticate_user, only: [:create]
-    skip_before_action :authenticate_user
+    skip_before_action :authenticate_user, only: [:create]
 
     # wrap debugg
     # wrap_parameters :user, include: [:first_name, :last_name, :profile_image, :email, :bio, :password, :password_confirmation]
@@ -16,6 +15,7 @@ class UsersController < ApplicationController
     def create
         user = User.create!(user_params)
         session[:user_id] = user.id
+        binding.break
         render json: user, status: :created
     end
 
