@@ -10,7 +10,6 @@ import "./App.css";
 function App() {
   // const [count, setCount] = useState(0);
   const [user, setUser] = useState(null);
-  const [isLoggedIn, userIsLoggedIn] = useState(false)
 
   useEffect(() => {
     //auto-login

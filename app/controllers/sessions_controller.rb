@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
-    skip_before_action :authenticate_user, only: [:create]
+    # original
+    # skip_before_action :authenticate_user, only: [:create]
+    skip_before_action :authenticate_user
+
+    # test
+    # skip_before_action :authorize, only: [:create]
 
     # POST '/login'
     def create 
@@ -22,5 +27,11 @@ class SessionsController < ApplicationController
             render json: {errors: "No active session"}, status: :unauthorized
         end
     end
+
+    # test
+    # def destroy
+    #     session.delete :user_id
+    #     head :no_content
+    #   end
 
 end
