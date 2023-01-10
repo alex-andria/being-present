@@ -1,3 +1,6 @@
+# Disclaimer
+Tester code before traceback and final project for GDI Hackathon 2022 is in repo being-present-updated *
+
 # README
 
 This README would normally document whatever steps are necessary to get the
